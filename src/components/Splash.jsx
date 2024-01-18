@@ -59,7 +59,7 @@ const Splash = () => {
             <div className='w-full flex items-center sm:mt-32 mt-10 bg-[#162F42]/[.35] shadow backdrop-blur-lg relative z-10'>
                 <div className='flex md:flex-row flex-col items-center justify-center max-w-7xl mx-auto relative sm:py-5 py-0 w-full'>
                     {sectionData.map((section, index) => (
-                        <div key={index} className='flex flex-col justify-center items-center gap-2 px-7 md:border-r md:border-b-0 border-b md:py-0 py-5 border-[#021727] md:w-auto w-full'>
+                        <div key={index} className='flex flex-col justify-center items-center gap-2 px-7 md:border-r md:last:border-r-0 md:border-b-0 border-b last:border-b-0 md:py-0 py-5 border-[#021727] md:w-auto w-full'>
                             <Icon icon={section.icon} color='#ed8267' width="40" height="40" />
                             <h3 className='text-[14px] font-[400] text-[#fff]/[0.6] tracking-wider text-center'>{section.title}</h3>
                         </div>
