@@ -18,9 +18,33 @@ function ScrollToTop() {
     }, [location.pathname]);
 
     return null;
+
+
+
 }
 
 function App() {
+    useEffect(() => {
+        const handleScroll = (e) => {
+          e.preventDefault(); // Prevent the default scrolling behavior
+    
+          const deltaY = e.deltaY;
+    
+          // Adjust the scroll distance as needed
+          window.scrollBy({
+            top: deltaY * 4.5, // Experiment with different values
+            behavior: 'smooth',
+          });
+        };
+    
+        document.body.addEventListener('wheel', handleScroll, { passive: false });
+    
+        return () => {
+          // Cleanup: remove event listener when the component unmounts
+          document.body.removeEventListener('wheel', handleScroll);
+        };
+      }, []);
+
     return (
         <>
             <BrowserRouter>
